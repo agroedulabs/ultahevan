@@ -7,51 +7,56 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         .slide { display: none; }
-        .slide.active { display: block; animation: fadeIn 1s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: scale(1.05); } to { opacity: 1; transform: scale(1); } }
+        .slide.active { display: block; animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(1.02); } to { opacity: 1; transform: scale(1); } }
+        .gradient-overlay { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 40%, transparent 100%); }
     </style>
 </head>
 <body class="bg-white text-slate-900">
 
-    <header class="h-screen flex flex-col justify-center items-center text-center p-6 bg-[#fafafa]">
-        <div class="mb-6 px-4 py-1 border border-blue-600 text-blue-600 text-[10px] tracking-[0.5em] uppercase rounded-full font-bold italic">
-            Established 21 April 2008
+    <header class="h-screen flex flex-col justify-center items-center text-center p-6 bg-[#fcfcfc]">
+        <div class="mb-6 px-4 py-1 border border-blue-600 text-blue-600 text-[10px] tracking-[0.5em] uppercase rounded-full font-bold">
+            21 April 2008 — 21 April 2026
         </div>
-        <h1 class="text-5xl md:text-8xl font-bold tracking-tighter mb-4">Evan Adiib <br><span class="text-slate-300 font-light italic">Estiawan.</span></h1>
-        <p class="text-slate-500 text-lg max-w-md font-light">"Selamat ke-18, Jagoan Ibu. Berakar kuat, bergerak hebat, dan senantiasa berarti."</p>
+        <h1 class="text-5xl md:text-8xl font-bold tracking-tighter mb-4 text-slate-900">
+            Evan Adiib <br><span class="text-slate-400 font-light italic">Estiawan.</span>
+        </h1>
+        <p class="text-slate-500 text-lg max-w-md font-light leading-relaxed">
+            Selamat ke-18, Jagoan Ibu. <br>Gerbang masa depanmu telah terbuka lebar.
+        </p>
         <button onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})" class="mt-20 animate-bounce text-slate-300 text-2xl">↓</button>
     </header>
 
-    <section id="gallery" class="py-20 px-4 md:px-0 bg-white">
-        <div class="max-w-5xl mx-auto">
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 md:px-0">
             <div class="relative overflow-hidden rounded-[2.5rem] shadow-2xl bg-black aspect-[3/4] md:aspect-video group">
                 <div id="slider" class="h-full w-full">
                     </div>
-                <div class="absolute bottom-10 right-10 flex gap-3 z-30">
-                    <button onclick="change(-1)" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white w-12 h-12 rounded-full transition-all flex items-center justify-center">❮</button>
-                    <button onclick="change(1)" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white w-12 h-12 rounded-full transition-all flex items-center justify-center">❯</button>
+                <div class="absolute bottom-10 right-10 flex gap-3 z-30 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <button onclick="change(-1)" class="bg-white/10 hover:bg-white/30 backdrop-blur-md text-white w-12 h-12 rounded-full transition-all flex items-center justify-center">❮</button>
+                    <button onclick="change(1)" class="bg-white/10 hover:bg-white/30 backdrop-blur-md text-white w-12 h-12 rounded-full transition-all flex items-center justify-center">❯</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-[#fafafa] px-6 text-center">
+    <section class="py-24 bg-[#fcfcfc] px-6 text-center">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold mb-8">Pesan Cinta Ibu</h2>
-            <div class="space-y-6 text-slate-600 leading-relaxed text-lg">
-                <p>"Mas Evan, usia 18 adalah gerbang masa depan. Ujian yang sedang kamu hadapi hanyalah satu anak tangga menuju bangku kuliah impianmu. Ibu percaya kamu bisa melaluinya dengan hebat."</p>
-                <p>"Ingatlah, doa Ibu dan kasih sayang dari **Akmal** selalu menyertaimu. Jadilah pemuda yang gigih, jujur, dan selalu rendah hati."</p>
+            <h2 class="text-3xl font-bold mb-10 text-slate-800">Menuju Kuliah & Masa Depan</h2>
+            <div class="space-y-8 text-slate-600 leading-relaxed text-lg italic">
+                <p>"Mas Evan, ujian yang sedang dihadapi adalah pembuktian ketangguhanmu. Fokuslah pada mimpi besarmu di bangku kuliah nanti. Ibu percaya penuh pada setiap usahamu."</p>
+                <p>"Ingatlah, doa Ibu dan kasih sayang dari **Akmal** selalu menyertaimu. Jadilah pemuda yang gigih, cerdas, namun tetap rendah hati."</p>
             </div>
-            <div class="mt-16 pt-16 border-t border-slate-200">
+            <div class="mt-20 pt-16 border-t border-slate-200">
                 <p class="uppercase tracking-[0.8em] text-blue-600 font-bold">With Love, Ibu</p>
             </div>
         </div>
     </section>
 
     <footer class="py-10 text-center text-slate-300 text-xs tracking-widest uppercase">
-        © 2026 — Digital Tribute for Evan Adiib Estiawan
+        © 2026 — Digital Tribute for Mas Evan
     </footer>
 
     <script>
@@ -66,40 +71,40 @@
             { id: "12ftZFZNyEynXP_ilFAT0hrKAxBWZHKcu", cap: "Energi untuk pertumbuhanmu. Nikmati setiap suapan, syukuri setiap berkat, dan tumbuhlah menjadi pribadi yang kuat." },
             { id: "1FsFaFyVMvL_2t18W-wUbzBJragrRu9M-", cap: "Ketenangan hati dan fokus pada tujuan. Ibu percaya pada kemampuanmu untuk meraih apa pun yang kamu impikan." },
             { id: "1DQvuXKC5c_be8Zy2cBUTuV59cZpulXPh", cap: "Adaptasi adalah kunci kekuatan. Tetap tangguh, tetap sehat, dan jadilah penjaga bagi sesama." },
-            { id: "15m8g4ht9axs1ASOpL5pRN3am2LEdSCS1", cap: "Tumbuh bersama, berbagi pelukan, dan belajar arti persaudaraan sejati sejak dini." },
+            { id: "15m8g4ht9axs1ASOpL5pRN3am2LEdSCS1", cap: "Tumbuh bersama sahabat, mengukir kenangan indah di masa sekolah." },
             { id: "1LG3_MB-b3mK0CBGVRmxTHIyiuiFK-Hua", cap: "Keceriaan yang tak pernah habis, energi Ibu untuk terus berjuang memberimu yang terbaik." },
-            { id: "1-3ABgYhYekScw0WWG_k-HLw_-1fuVQZF", cap: "Tumbuh bersama, berbagi pelukan, dan belajar arti persaudaraan sejati sejak dini." },
+            { id: "1-3ABgYhYekScw0WWG_k-HLw_-1fuVQZF", cap: "Kasih sayang Ibu adalah pondasi utama dalam setiap langkahmu." },
             { id: "1wQx57r9NQjOrkAyueUJE3EldD1oFQn-7", cap: "Momen sederhana di sudut rumah, di mana imajinasimu mulai menjelajah tanpa batas." },
             { id: "1MVjp0ZKTF0LSIQ3iMIM8REH19_3lH8tJ", cap: "Tumbuh dan belajar bersama, mengukir kenangan indah di masa sekolah." },
-            { id: "1Gk1iFnck_jf_yT3CJkaRSDslPVe8E2-3", cap: "Melangkah ke fase baru. Menikmati waktu, merenungi mimpi, dan bersiap menaklukkan tantangan sekolah." },
-            { id: "1ZFss8am3IqKPefzWoj69yM8pPVT5zvp2", cap: "Gayamu, cerminan dirimu. Tumbuhlah menjadi pemuda yang berkarakter dan percaya diri." },
-            { id: "1taXeRvqnterWGB-Ff_YxxpfTX8o8_WSY", cap: "Ketenangan hati dan fokus pada tujuan. Ibu percaya pada kemampuanmu untuk meraih apa pun yang kamu impikan." },
-            { id: "18ByANskiERmXdqYEfOLjtKPvQhUPSK0b", cap: "Tumbuh bersama, berbagi pelukan, dan belajar arti persaudaraan sejati sejak dini." },
-            { id: "1WkgqU43-wtjeN3LQxq63BtL24szgJ8RE", cap: "Mimpi besar, langkah nyata. Teruslah bermimpi dan wujudkan cita-citamu." },
-            { id: "1dma06TLl0v9i5iYHsTSwTwfsJGu5u36X", cap: "Tumbuh bersama, berbagi pelukan, dan belajar arti persaudaraan sejati sejak dini." },
-            { id: "1-Kahl4LPYX6kTBCMRhjGKig8Jsqdw7yi", cap: "Keceriaan yang tak pernah habis, energi Ibu untuk terus berjuang memberimu yang terbaik." },
-            { id: "1pCuuPILcxDtcUdRSLjFbvdBX3xfhv4sC", cap: "Tumbuh bersama, berbagi pelukan, dan belajar arti persaudaraan sejati sejak dini." },
-            { id: "1USUgGJd5iHqnYA1ho86HevR9eUogpC5F", cap: "Momen sederhana di sudut rumah, di mana imajinasimu mulai menjelajah tanpa batas." },
-            { id: "1HRt1_XlbSmv2I6NvQa0sDi6ai2I5AnVK", cap: "Belajar berani, melangkah maju. Kepercayaan dan kasih sayang keluarga, bekalmu di masa depan." },
-            { id: "1RsZ9RimVvBTtyyF125UoeHfEK_t4G60C", cap: "Melangkah ke fase baru. Menikmati waktu, merenungi mimpi, dan bersiap menaklukkan tantangan sekolah." },
-            { id: "1eCqa0ixuIxgJcgoWFxa2PQylR5fbZq9w", cap: "Semangat tak pernah padam. Teruslah berjuang dan raih kemenangan dalam hidup." },
-            { id: "1lJuyzDWjQiQ9WLaALoZfLIoq6ZIneOwY", cap: "Ketenangan hati dan fokus pada tujuan. Ibu percaya pada kemampuanmu untuk meraih apa pun yang kamu impikan." },
-            { id: "1gop2f88qa_KhiyKr0FOmnmxUm4YTGk1K", cap: "Tumbuh bersama, berbagi pelukan, dan belajar arti persaudaraan sejati sejak dini." },
-            { id: "182jQkh_Alm5sSLEP7-KPrftDxFs8l81i", cap: "Gayamu, cerminan dirimu. Tumbuhlah menjadi pemuda yang berkarakter dan percaya diri." }
+            { id: "1Gk1iFnck_jf_yT3CJkaRSDslPVe8E2-3", cap: "Melangkah ke fase baru dengan penuh percaya diri." },
+            { id: "1ZFss8am3IqKPefzWoj69yM8pPVT5zvp2", cap: "Gayamu, cerminan dirimu. Tumbuhlah menjadi pemuda yang berkarakter." },
+            { id: "1taXeRvqnterWGB-Ff_YxxpfTX8o8_WSY", cap: "Ketenangan hati adalah kunci untuk meraih apa pun yang kamu impikan." },
+            { id: "18ByANskiERmXdqYEfOLjtKPvQhUPSK0b", cap: "Bersama Akmal, belajar arti persaudaraan sejati sejak dini." },
+            { id: "1WkgqU43-wtjeN3LQxq63BtL24szgJ8RE", cap: "Mimpi besar, langkah nyata. Teruslah bermimpi, Mas Evan." },
+            { id: "1dma06TLl0v9i5iYHsTSwTwfsJGu5u36X", cap: "Tumbuh bersama dalam kehangatan keluarga." },
+            { id: "1-Kahl4LPYX6kTBCMRhjGKig8Jsqdw7yi", cap: "Keceriaanmu adalah kebahagiaan terbesar bagi Ibu." },
+            { id: "1pCuuPILcxDtcUdRSLjFbvdBX3xfhv4sC", cap: "Dukungan saudara adalah kekuatan yang tak ternilai." },
+            { id: "1USUgGJd5iHqnYA1ho86HevR9eUogpC5F", cap: "Menjelajah waktu lewat memori yang kita bangun bersama." },
+            { id: "1HRt1_XlbSmv2I6NvQa0sDi6ai2I5AnVK", cap: "Belajar berani menghadapi dunia, dimulai dari langkah-langkah kecil." },
+            { id: "1RsZ9RimVvBTtyyF125UoeHfEK_t4G60C", cap: "Bersiap menaklukkan tantangan baru di dunia perkuliahan." },
+            { id: "1eCqa0ixuIxgJcgoWFxa2PQylR5fbZq9w", cap: "Semangat tak pernah padam untuk meraih kemenangan dalam hidup." },
+            { id: "1lJuyzDWjQiQ9WLaALoZfLIoq6ZIneOwY", cap: "Fokus pada masa depan, Ibu selalu ada di belakangmu." },
+            { id: "1gop2f88qa_KhiyKr0FOmnmxUm4YTGk1K", cap: "Pelukan Ibu adalah tempat pulang ternyaman bagi Evan." },
+            { id: "182jQkh_Alm5sSLEP7-KPrftDxFs8l81i", cap: "18 tahun: Masanya Evan Adiib Estiawan bersinar terang." }
         ];
 
         const slider = document.getElementById('slider');
-        let index = 0;
+        let currentIndex = 0;
 
-        function build() {
+        function buildSlider() {
             data.forEach((item, i) => {
                 const div = document.createElement('div');
-                div.className = `slide h-full w-full absolute inset-0 ${i===0?'active':''}`;
+                div.className = `slide h-full w-full absolute inset-0 ${i === 0 ? 'active' : ''}`;
                 div.innerHTML = `
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent z-10"></div>
-                    <img src="https://lh3.googleusercontent.com/d/${item.id}" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/800x600?text=Gambar+Drive+Masih+Privat'">
-                    <div class="absolute bottom-12 left-10 right-12 z-20 text-white">
-                        <span class="text-blue-500 font-bold tracking-widest text-[10px] mb-2 block uppercase">Memory ${i+1}/30</span>
+                    <div class="absolute inset-0 gradient-overlay z-10"></div>
+                    <img src="https://lh3.googleusercontent.com/d/${item.id}" class="w-full h-full object-cover" loading="lazy">
+                    <div class="absolute bottom-12 left-10 right-10 z-20 text-white">
+                        <span class="text-blue-400 font-bold tracking-widest text-[10px] mb-2 block uppercase">Memory ${i+1}/30</span>
                         <p class="text-xl md:text-3xl font-light italic leading-snug">"${item.cap}"</p>
                     </div>
                 `;
@@ -109,13 +114,13 @@
 
         function change(n) {
             const slides = document.querySelectorAll('.slide');
-            slides[index].classList.remove('active');
-            index = (index + n + slides.length) % slides.length;
-            slides[index].classList.add('active');
+            slides[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + n + slides.length) % slides.length;
+            slides[currentIndex].classList.add('active');
         }
 
-        build();
-        setInterval(() => change(1), 5000); 
+        buildSlider();
+        setInterval(() => change(1), 6000); 
     </script>
 </body>
 </html>
